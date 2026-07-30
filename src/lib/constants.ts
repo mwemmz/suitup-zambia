@@ -37,7 +37,7 @@ export const COLLECTIONS: Collection[] = [
     slug: "executive",
     description: "Power suits for the modern leader",
     image: {
-      src: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=85",
+      src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1560252829-804f1aedf1be&w=1200&fit=cover&q=85",
       alt: "Executive suit collection",
       width: 800,
       height: 1000,
@@ -50,7 +50,7 @@ export const COLLECTIONS: Collection[] = [
     slug: "signature",
     description: "Our hallmark of elegance",
     image: {
-      src: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1200&q=85",
+      src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1567510231111-9c7b3c9d0e0c&w=1200&fit=cover&q=85",
       alt: "Signature suit collection",
       width: 800,
       height: 1000,
@@ -63,7 +63,7 @@ export const COLLECTIONS: Collection[] = [
     slug: "heritage",
     description: "Timeless classics reimagined",
     image: {
-      src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85",
+      src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1617127365659-c2b6a3a64f5c&w=1200&fit=cover&q=85",
       alt: "Heritage suit collection",
       width: 800,
       height: 1000,
@@ -76,7 +76,7 @@ export const COLLECTIONS: Collection[] = [
     slug: "ceremony",
     description: "For life's most memorable moments",
     image: {
-      src: "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?auto=format&fit=crop&w=1200&q=85",
+      src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1507003211169-0a1dd7228f2d&w=1200&fit=cover&q=85",
       alt: "Ceremony suit collection",
       width: 800,
       height: 1000,
@@ -95,9 +95,9 @@ export const PRODUCTS: Product[] = [
     price: 8500,
     compareAtPrice: 10500,
     images: [
-      { src: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=85", alt: "Midnight Navy Suit Front View", width: 900, height: 1200 },
-      { src: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1200&q=85", alt: "Midnight Navy Suit Back View", width: 900, height: 1200 },
-      { src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85", alt: "Midnight Navy Suit Detail", width: 900, height: 1200 },
+      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1560252829-804f1aedf1be&w=1200&fit=cover&q=85", alt: "Midnight Navy Suit Front View", width: 900, height: 1200 },
+      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1567510231111-9c7b3c9d0e0c&w=1200&fit=cover&q=85", alt: "Midnight Navy Suit Back View", width: 900, height: 1200 },
+      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1617127365659-c2b6a3a64f5c&w=1200&fit=cover&q=85", alt: "Midnight Navy Suit Detail", width: 900, height: 1200 },
     ],
     category: "Suits",
     tags: ["executive", "formal", "navy"],
@@ -130,8 +130,8 @@ export const PRODUCTS: Product[] = [
       "A timeless three-piece ensemble in charcoal grey. The waistcoat adds a layer of sophistication that sets you apart.",
     price: 9500,
     images: [
-      { src: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=1200&q=85", alt: "Charcoal Suit Front View", width: 900, height: 1200 },
-      { src: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=85", alt: "Charcoal Suit Back View", width: 900, height: 1200 },
+      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1567510231111-9c7b3c9d0e0c&w=1200&fit=cover&q=85", alt: "Charcoal Suit Front View", width: 900, height: 1200 },
+      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1560252829-804f1aedf1be&w=1200&fit=cover&q=85", alt: "Charcoal Suit Back View", width: 900, height: 1200 },
     ],
     category: "Suits",
     tags: ["heritage", "formal", "three-piece"],
@@ -162,7 +162,7 @@ export const PRODUCTS: Product[] = [
       "Make an entrance with our ivory dinner jacket. Crafted from premium cotton-wool blend, it's the ultimate statement piece for summer galas.",
     price: 7200,
     images: [
-      { src: "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&fit=crop&w=1200&q=85", alt: "Ivory Jacket Front View", width: 900, height: 1200 },
+      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1549923746-c1d8a5fcdc0c&w=1200&fit=cover&q=85", alt: "Ivory Jacket Front View", width: 900, height: 1200 },
     ],
     category: "Jackets",
     tags: ["ceremony", "formal", "summer"],
@@ -192,7 +192,7 @@ export const PRODUCTS: Product[] = [
     price: 6800,
     compareAtPrice: 8200,
     images: [
-      { src: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85", alt: "Burgundy Blazer View", width: 900, height: 1200 },
+      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1617127365659-c2b6a3a64f5c&w=1200&fit=cover&q=85", alt: "Burgundy Blazer View", width: 900, height: 1200 },
     ],
     category: "Jackets",
     tags: ["signature", "evening", "luxury"],
@@ -222,7 +222,7 @@ export const PRODUCTS: Product[] = [
       "The foundation of every great suit. Our signature dress shirt in pure Egyptian cotton with a spread collar and mother-of-pearl buttons.",
     price: 1800,
     images: [
-      { src: "https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?auto=format&fit=crop&w=1200&q=85", alt: "White Dress Shirt", width: 900, height: 1200 },
+      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1603415526960-f7e0328c63b1&w=1200&fit=cover&q=85", alt: "White Dress Shirt", width: 900, height: 1200 },
     ],
     category: "Shirts",
     tags: ["essential", "formal", "classic"],
@@ -254,7 +254,7 @@ export const PRODUCTS: Product[] = [
       "Hand-finished silk tie in charcoal with a subtle micro-dot pattern. The perfect accent to complete your ensemble.",
     price: 850,
     images: [
-      { src: "https://images.unsplash.com/photo-1589756823695-cb18902129d2?auto=format&fit=crop&w=1200&q=85", alt: "Charcoal Silk Tie", width: 900, height: 1200 },
+      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1583394838336-acd977736f90&w=1200&fit=cover&q=85", alt: "Charcoal Silk Tie", width: 900, height: 1200 },
     ],
     category: "Accessories",
     tags: ["essential", "formal", "silk"],
