@@ -37,7 +37,7 @@ export const COLLECTIONS: Collection[] = [
     slug: "executive",
     description: "Power suits for the modern leader",
     image: {
-      src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1560252829-804f1aedf1be&w=1200&fit=cover&q=85",
+      src: "/images/Custom-Office-Suit-For-Men.jpg",
       alt: "Executive suit collection",
       width: 800,
       height: 1000,
@@ -50,7 +50,7 @@ export const COLLECTIONS: Collection[] = [
     slug: "signature",
     description: "Our hallmark of elegance",
     image: {
-      src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1567510231111-9c7b3c9d0e0c&w=1200&fit=cover&q=85",
+      src: "/images/Men-Azure-Blue-3-piece-Suit-1.jpg",
       alt: "Signature suit collection",
       width: 800,
       height: 1000,
@@ -63,7 +63,7 @@ export const COLLECTIONS: Collection[] = [
     slug: "heritage",
     description: "Timeless classics reimagined",
     image: {
-      src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1617127365659-c2b6a3a64f5c&w=1200&fit=cover&q=85",
+      src: "/images/Grey-Business-Suit.jpg",
       alt: "Heritage suit collection",
       width: 800,
       height: 1000,
@@ -76,7 +76,7 @@ export const COLLECTIONS: Collection[] = [
     slug: "ceremony",
     description: "For life's most memorable moments",
     image: {
-      src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1507003211169-0a1dd7228f2d&w=1200&fit=cover&q=85",
+      src: "/images/Beige-Tuxedo-with-Same-Fabric-Lapel-For-Men.jpg",
       alt: "Ceremony suit collection",
       width: 800,
       height: 1000,
@@ -95,9 +95,9 @@ export const PRODUCTS: Product[] = [
     price: 8500,
     compareAtPrice: 10500,
     images: [
-      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1560252829-804f1aedf1be&w=1200&fit=cover&q=85", alt: "Midnight Navy Suit Front View", width: 900, height: 1200 },
-      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1567510231111-9c7b3c9d0e0c&w=1200&fit=cover&q=85", alt: "Midnight Navy Suit Back View", width: 900, height: 1200 },
-      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1617127365659-c2b6a3a64f5c&w=1200&fit=cover&q=85", alt: "Midnight Navy Suit Detail", width: 900, height: 1200 },
+      { src: "/images/3-piece-dark-blue-suit.jpg", alt: "Midnight Navy Suit Front View", width: 900, height: 1200 },
+      { src: "/images/Dark-Navy-Blue-Suit.jpg", alt: "Midnight Navy Suit Back View", width: 900, height: 1200 },
+      { src: "/images/Custom-Office-Suit-For-Men.jpg", alt: "Midnight Navy Suit Detail", width: 900, height: 1200 },
     ],
     category: "Suits",
     tags: ["executive", "formal", "navy"],
@@ -110,8 +110,8 @@ export const PRODUCTS: Product[] = [
       { label: "46L", value: "46l", inStock: true },
     ],
     colors: [
-      { name: "Navy", hex: "#1a2744", inStock: true },
-      { name: "Charcoal", hex: "#36454f", inStock: true },
+      { name: "Navy", hex: "#100f1c", inStock: true },
+      { name: "Charcoal", hex: "#1c1f23", inStock: true },
       { name: "Black", hex: "#0a0a0a", inStock: true },
     ],
     fabric: "Italian Super 150s Wool",
@@ -130,8 +130,8 @@ export const PRODUCTS: Product[] = [
       "A timeless three-piece ensemble in charcoal grey. The waistcoat adds a layer of sophistication that sets you apart.",
     price: 9500,
     images: [
-      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1567510231111-9c7b3c9d0e0c&w=1200&fit=cover&q=85", alt: "Charcoal Suit Front View", width: 900, height: 1200 },
-      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1560252829-804f1aedf1be&w=1200&fit=cover&q=85", alt: "Charcoal Suit Back View", width: 900, height: 1200 },
+      { src: "/images/Grey-Business-Suit.jpg", alt: "Charcoal Suit Front View", width: 900, height: 1200 },
+      { src: "/images/grey-business-suit-side-view.jpg", alt: "Charcoal Suit Back View", width: 900, height: 1200 },
     ],
     category: "Suits",
     tags: ["heritage", "formal", "three-piece"],
@@ -143,8 +143,8 @@ export const PRODUCTS: Product[] = [
       { label: "46L", value: "46l", inStock: false },
     ],
     colors: [
-      { name: "Charcoal", hex: "#36454f", inStock: true },
-      { name: "Navy", hex: "#1a2744", inStock: true },
+      { name: "Charcoal", hex: "#5e5d5b", inStock: true },
+      { name: "Dark Grey", hex: "#464234", inStock: true },
     ],
     fabric: "Italian Super 120s Wool",
     rating: 4.8,
@@ -162,7 +162,7 @@ export const PRODUCTS: Product[] = [
       "Make an entrance with our ivory dinner jacket. Crafted from premium cotton-wool blend, it's the ultimate statement piece for summer galas.",
     price: 7200,
     images: [
-      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1549923746-c1d8a5fcdc0c&w=1200&fit=cover&q=85", alt: "Ivory Jacket Front View", width: 900, height: 1200 },
+      { src: "/images/Beige-Tuxedo-with-Same-Fabric-Lapel-For-Men.jpg", alt: "Ivory Jacket Front View", width: 900, height: 1200 },
     ],
     category: "Jackets",
     tags: ["ceremony", "formal", "summer"],
@@ -172,7 +172,7 @@ export const PRODUCTS: Product[] = [
       { label: "42R", value: "42r", inStock: true },
     ],
     colors: [
-      { name: "Ivory", hex: "#fffff0", inStock: true },
+      { name: "Ivory", hex: "#d4dddd", inStock: true },
       { name: "Black", hex: "#0a0a0a", inStock: true },
     ],
     fabric: "Cotton-Wool Blend",
@@ -192,7 +192,7 @@ export const PRODUCTS: Product[] = [
     price: 6800,
     compareAtPrice: 8200,
     images: [
-      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1617127365659-c2b6a3a64f5c&w=1200&fit=cover&q=85", alt: "Burgundy Blazer View", width: 900, height: 1200 },
+      { src: "/images/Purple-3-Piece-Suit-1.jpg", alt: "Burgundy Blazer View", width: 900, height: 1200 },
     ],
     category: "Jackets",
     tags: ["signature", "evening", "luxury"],
@@ -203,8 +203,8 @@ export const PRODUCTS: Product[] = [
       { label: "44R", value: "44r", inStock: false },
     ],
     colors: [
-      { name: "Burgundy", hex: "#800020", inStock: true },
-      { name: "Forest Green", hex: "#228b22", inStock: true },
+      { name: "Burgundy", hex: "#472732", inStock: true },
+      { name: "Deep Purple", hex: "#2b2332", inStock: true },
     ],
     fabric: "Italian Velvet",
     rating: 4.9,
@@ -222,7 +222,7 @@ export const PRODUCTS: Product[] = [
       "The foundation of every great suit. Our signature dress shirt in pure Egyptian cotton with a spread collar and mother-of-pearl buttons.",
     price: 1800,
     images: [
-      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1603415526960-f7e0328c63b1&w=1200&fit=cover&q=85", alt: "White Dress Shirt", width: 900, height: 1200 },
+      { src: "/images/Stone-White-3-Piece-Suit-1.jpg", alt: "White Dress Shirt", width: 900, height: 1200 },
     ],
     category: "Shirts",
     tags: ["essential", "formal", "classic"],
@@ -235,8 +235,8 @@ export const PRODUCTS: Product[] = [
       { label: "17.5", value: "17.5", inStock: true },
     ],
     colors: [
-      { name: "White", hex: "#ffffff", inStock: true },
-      { name: "Light Blue", hex: "#add8e6", inStock: true },
+      { name: "Stone", hex: "#cac1b9", inStock: true },
+      { name: "White", hex: "#d7ced5", inStock: true },
     ],
     fabric: "Egyptian Cotton",
     rating: 4.6,
@@ -254,15 +254,14 @@ export const PRODUCTS: Product[] = [
       "Hand-finished silk tie in charcoal with a subtle micro-dot pattern. The perfect accent to complete your ensemble.",
     price: 850,
     images: [
-      { src: "https://images.weserv.nl/?url=images.unsplash.com/photo-1583394838336-acd977736f90&w=1200&fit=cover&q=85", alt: "Charcoal Silk Tie", width: 900, height: 1200 },
+      { src: "/images/black-suit-with-grey-vest-close-view.jpg", alt: "Charcoal Silk Tie", width: 900, height: 1200 },
     ],
     category: "Accessories",
     tags: ["essential", "formal", "silk"],
     sizes: [],
     colors: [
-      { name: "Charcoal", hex: "#36454f", inStock: true },
-      { name: "Burgundy", hex: "#800020", inStock: true },
-      { name: "Navy", hex: "#1a2744", inStock: true },
+      { name: "Steel Grey", hex: "#727a89", inStock: true },
+      { name: "Silver", hex: "#8a96a3", inStock: true },
     ],
     fabric: "Italian Silk",
     rating: 4.5,
