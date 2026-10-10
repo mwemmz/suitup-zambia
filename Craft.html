@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Craft — Sixty Hours by Hand | Halden &amp; Vane</title>
+<meta name="description" content="Sixty hours by hand: five stages and three fittings that turn a length of cloth into a suit that is only yours.">
+<meta property="og:title" content="Craft — Sixty Hours by Hand | Halden &amp; Vane">
+<meta property="og:description" content="Five stages and three fittings that turn a length of cloth into a suit that is only yours.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#0b0a08;color:#efe8dc;font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#c9a46a;text-decoration:none}a:hover{color:#efe8dc}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 24px;padding:clamp(14px,2.4vw,24px) clamp(16px,4vw,56px);background:#0b0a08;transform:translateZ(0);border-bottom:1px solid #efe8dc14">
+  <a href="/" style="font-family:'Geist',sans-serif;font-size:22px;letter-spacing:.04em;color:#efe8dc">Halden <span style="color:#c9a46a">&amp;</span> Vane</a>
+  <nav style="display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%;white-space:nowrap;gap:clamp(14px,3vw,40px);font-size:clamp(10px,2.6vw,12px);letter-spacing:.18em;text-transform:uppercase">
+    <a href="/Craft" style="color:#c9a46a">Craft</a>
+    <a href="/Collections" style="color:#efe8dc" style-hover="color:#c9a46a">Collections</a>
+    <a href="/Builder" style="color:#efe8dc" style-hover="color:#c9a46a">Build a suit</a>
+    <a href="/Fitting" style="color:#c9a46a;border-bottom:1px solid #c9a46a66;padding-bottom:4px" style-hover="color:#efe8dc">Book a fitting</a>
+  </nav>
+</header>
+
+<section data-screen-label="Craft · Intro" style="padding:clamp(120px,12vw,150px) clamp(20px,6vw,96px) clamp(64px,8vw,120px);display:flex;flex-direction:column;gap:28px;max-width:980px">
+  <div style="display:flex;flex-direction:column;gap:24px">
+    <h1 data-reveal="1" style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(52px,8vw,124px);line-height:.98;margin:0">Sixty hours,<br><span style="color:#c9a46a">by hand.</span></h1>
+  </div>
+  <p data-reveal="1" data-delay="100" style="font-weight:300;font-size:19px;line-height:1.7;color:#efe8dcbf;margin:0;max-width:480px">A bespoke suit is not a product so much as a process. Five stages, three fittings, and a cutter who will know your shoulders better than your tailor ever has.</p>
+</section>
+
+<sc-for list="{{ chapters }}" as="c" hint-placeholder-count="0">
+  <section data-screen-label="Craft · Chapter" style="padding:clamp(48px,6vw,80px) clamp(20px,6vw,96px);border-top:1px solid #efe8dc14;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(32px,6vw,96px);align-items:center">
+    <div data-reveal="1" style="aspect-ratio:4/3;background:#16140f;overflow:hidden;order:{{ c.order }}">
+      <sc-if value="{{ c.img }}" hint-placeholder-val="{{ false }}"><img src="{{ c.img }}" alt="{{ c.title }}" style="width:100%;height:100%;object-fit:cover;display:block"></img></sc-if>
+    </div>
+    <div data-reveal="1" data-delay="80" style="display:flex;flex-direction:column;gap:20px;max-width:480px">
+      <div style="display:flex;align-items:baseline;gap:16px">
+        <div style="font-family:'Geist',sans-serif;font-size:56px;line-height:1;color:#c9a46a">{{ c.n }}</div>
+        <div style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#efe8dc99">{{ c.when }}</div>
+      </div>
+      <h2 style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(34px,3.6vw,52px);line-height:1.05;margin:0">{{ c.title }}</h2>
+      <p style="font-weight:300;font-size:17px;line-height:1.7;color:#efe8dcbf;margin:0">{{ c.body }}</p>
+    </div>
+  </section>
+</sc-for>
+
+<section data-screen-label="Craft · Book" style="padding:clamp(96px,12vw,180px) clamp(20px,6vw,96px);background:#efe8dc;color:#0b0a08;display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:32px">
+  <h2 data-reveal="1" style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(40px,6vw,92px);line-height:.95;margin:0;max-width:760px">Begin with <span style="font-style:italic">a conversation.</span></h2>
+  <a href="/Fitting" style="background:#0b0a08;color:#efe8dc;padding:20px 40px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:transform 160ms ease-out,background 200ms ease-out" style-hover="background:#16140f;color:#efe8dc" style-active="transform:scale(0.97)">Book a fitting</a>
+</section>
+
+<footer style="padding:48px clamp(20px,6vw,96px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:#efe8dc99;border-top:1px solid #efe8dc14">
+  <div style="font-family:'Geist',sans-serif;font-size:18px;color:#efe8dc">Halden &amp; Vane</div>
+  <div>14 Sackville Street, London W1</div>
+  <div>Mon–Sat · 10–7</div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  src(i) { return `frames/d/${String(i).padStart(3, '0')}.jpg`; }
+  componentDidMount() {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !window.IntersectionObserver) return;
+    this.io = new IntersectionObserver(es => es.forEach(en => {
+      if (!en.isIntersecting) return; this.io.unobserve(en.target);
+      en.target.animate([{ opacity: 0, transform: 'translateY(24px)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: +(en.target.dataset.delay || 0), easing: 'cubic-bezier(0.23,1,0.32,1)', fill: 'backwards' });
+    }), { rootMargin: '0px 0px -8% 0px' });
+    setTimeout(() => document.querySelectorAll('[data-reveal]').forEach(e => { if (e.getBoundingClientRect().top > innerHeight) this.io.observe(e); }), 50);
+  }
+  componentWillUnmount() { this.io && this.io.disconnect(); }
+  renderVals() {
+    return {
+      chapters: [
+        { n: '01', when: 'Week one', title: 'The consultation', body: 'We talk about how you live and what the suit is for. Then thirty-two measurements, and notes on posture: a dropped shoulder, a forward neck, the way you stand when you are not thinking about it.', img: this.src(0), order: 0 },
+        { n: '02', when: 'Week one', title: 'Shirt and pattern', body: 'Your cutter drafts a paper pattern by hand. It is yours for life, kept in our archive and amended as you change.', img: this.src(60), order: 1 },
+        { n: '03', when: 'Week three', title: 'The baste fitting', body: 'A loosely tacked shell of your cloth, fitted, chalked and pulled apart. The waistcoat is set close at the natural waist.', img: this.src(105), order: 0 },
+        { n: '04', when: 'Week five', title: 'Forward fitting', body: 'Canvas, lapels and sleeves are in. We refine balance, pitch and the roll of the lapel until it lies flat without effort.', img: this.src(165), order: 1 },
+        { n: '05', when: 'Week eight', title: 'Finishing', body: 'Hand-sewn buttonholes, working cuffs, horn buttons and a final press. Then one last fitting, and it is yours.', img: this.src(240), order: 0 }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

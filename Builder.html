@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Build a Suit — Halden &amp; Vane</title>
+<meta name="description" content="Compose your suit from fifteen house looks — cloth, trousers and tie — then reserve a first fitting with a cutter.">
+<meta property="og:title" content="Build a Suit — Halden &amp; Vane">
+<meta property="og:description" content="Compose your suit from fifteen house looks, then reserve a fitting.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#0b0a08;color:#efe8dc;font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#c9a46a;text-decoration:none}a:hover{color:#efe8dc}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 24px;padding:clamp(14px,2.4vw,24px) clamp(16px,4vw,56px);background:#0b0a08;transform:translateZ(0);border-bottom:1px solid #efe8dc14">
+  <a href="/" style="font-family:'Geist',sans-serif;font-size:22px;letter-spacing:.04em;color:#efe8dc">Halden <span style="color:#c9a46a">&amp;</span> Vane</a>
+  <nav style="display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%;white-space:nowrap;gap:clamp(14px,3vw,40px);font-size:clamp(10px,2.6vw,12px);letter-spacing:.18em;text-transform:uppercase">
+    <a href="/Craft" style="color:#efe8dc" style-hover="color:#c9a46a">Craft</a>
+    <a href="/Collections" style="color:#efe8dc" style-hover="color:#c9a46a">Collections</a>
+    <a href="/Builder" style="color:#c9a46a">Build a suit</a>
+    <a href="/Fitting" style="color:#c9a46a;border-bottom:1px solid #c9a46a66;padding-bottom:4px" style-hover="color:#efe8dc">Book a fitting</a>
+  </nav>
+</header>
+
+<main data-screen-label="Builder" style="min-height:100vh;padding:clamp(110px,12vw,140px) clamp(20px,6vw,96px) clamp(64px,8vw,96px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
+  <div style="position:relative;justify-self:center;height:min(72vh,820px);max-width:100%;aspect-ratio:9/16;background:#16140f;overflow:hidden">
+    <img src="uploads/ezgif-63297d4d2e8c1d4d-jpg/ezgif-frame-001.jpg" alt="The Ivory" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.a }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-63297d4d2e8c1d4d-jpg/ezgif-frame-005.jpg" alt="The Royal" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.b }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-63297d4d2e8c1d4d-jpg/ezgif-frame-007.jpg" alt="The Forest" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.c }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-63297d4d2e8c1d4d-jpg/ezgif-frame-009.jpg" alt="The Claret" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.d }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-63297d4d2e8c1d4d-jpg/ezgif-frame-011.jpg" alt="The Midnight" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.e }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-62f9cc861d8a5eb0-jpg/ezgif-frame-004.jpg" alt="The Admiral" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.f }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-62f9cc861d8a5eb0-jpg/ezgif-frame-005.jpg" alt="The Dove" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.g }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-62f9cc861d8a5eb0-jpg/ezgif-frame-007.jpg" alt="The Camel" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.h }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-62f9cc861d8a5eb0-jpg/ezgif-frame-009.jpg" alt="The Slate" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.i }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-62f9cc861d8a5eb0-jpg/ezgif-frame-011.jpg" alt="The Olive" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.j }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-8a1e4dd94816bc0b-jpg/ezgif-frame-004.jpg" alt="The Tweed" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.k }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-8a1e4dd94816bc0b-jpg/ezgif-frame-005.jpg" alt="The Riviera" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.l }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-8a1e4dd94816bc0b-jpg/ezgif-frame-007.jpg" alt="The Midnight Blue" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.m }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-8a1e4dd94816bc0b-jpg/ezgif-frame-009.jpg" alt="The Ivory Navy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.n }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <img src="uploads/ezgif-8a1e4dd94816bc0b-jpg/ezgif-frame-011.jpg" alt="The Banker" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:{{ op.o }};transition:opacity 320ms cubic-bezier(0.23,1,0.32,1)"></img>
+    <div style="position:absolute;left:20px;bottom:20px;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#efe8dc;background:#0b0a08b3;padding:8px 12px;white-space:nowrap">{{ look.n }} / 15</div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:36px;max-width:520px">
+    <div style="display:flex;flex-direction:column;gap:18px">
+      <h1 style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(44px,5.6vw,84px);line-height:.95;margin:0">{{ look.name }}</h1>
+      <p style="font-weight:300;font-size:17px;line-height:1.7;color:#efe8dcbf;margin:0;min-height:58px">{{ look.note }}</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#efe8dc99">Jacket · Trousers</div>
+      <div role="radiogroup" style="display:flex;flex-wrap:wrap;gap:12px">
+        <sc-for list="{{ looks }}" as="l" hint-placeholder-count="5">
+          <button role="radio" aria-checked="{{ l.on }}" aria-label="{{ l.name }}" onClick="{{ l.pick }}" style="width:64px;height:64px;padding:4px;cursor:pointer;background:transparent;border:1px solid {{ l.ring }};display:flex;transition:transform 160ms ease-out,border-color 200ms ease-out" style-active="transform:scale(0.95)">
+            <span style="flex:1;display:flex;flex-direction:column">
+              <span style="flex:3;background:{{ l.jacket }}"></span>
+              <span style="flex:2;background:{{ l.trousers }}"></span>
+            </span>
+          </button>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#efe8dc1f;border:1px solid #efe8dc1f">
+      <div style="background:#0b0a08;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#efe8dc80">Jacket</span><span style="font-size:15px">{{ look.jName }}</span></div>
+      <div style="background:#0b0a08;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#efe8dc80">Trousers</span><span style="font-size:15px">{{ look.tName }}</span></div>
+      <div style="background:#0b0a08;padding:18px;display:flex;flex-direction:column;gap:6px"><span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#efe8dc80">Tie</span><span style="font-size:15px">{{ look.tie }}</span></div>
+    </div>
+
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-top:28px;border-top:1px solid #efe8dc1f">
+      <div style="display:flex;flex-direction:column;gap:4px">
+        <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#efe8dc80">Bespoke, from</span>
+        <span style="font-family:'Geist',sans-serif;font-size:34px">{{ look.price }}</span>
+      </div>
+      <a href="/Fitting" style="background:#efe8dc;color:#0b0a08;padding:20px 36px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:transform 160ms ease-out,background 200ms ease-out" style-hover="background:#c9a46a;color:#0b0a08" style-active="transform:scale(0.97)">Book this suit</a>
+    </div>
+  </div>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { i: 0 };
+  LOOKS = [
+    { img: 'uploads/ezgif-63297d4d2e8c1d4d-jpg/ezgif-frame-001.jpg', name: 'The Ivory', jacket: '#e6dcc4', trousers: '#8a5a32', jName: 'Cream ivory', tName: 'Caramel', tie: 'Brown knit', price: 'K152,000', note: 'Cream double-breasted with caramel trousers. Summer weddings and long lunches.' },
+    { img: 'uploads/ezgif-63297d4d2e8c1d4d-jpg/ezgif-frame-005.jpg', name: 'The Royal', jacket: '#2c4f9e', trousers: '#a9a9a6', jName: 'Royal blue', tName: 'Stone grey', tie: 'Brown knit', price: 'K158,000', note: 'A bold blue jacket over pale stone. Confident, and easy to wear by day.' },
+    { img: 'uploads/ezgif-63297d4d2e8c1d4d-jpg/ezgif-frame-007.jpg', name: 'The Forest', jacket: '#1f3d2c', trousers: '#ddd3bc', jName: 'Forest green', tName: 'Cream', tie: 'Mustard gold', price: 'K158,000', note: 'Deep green with gold buttons. Country weekends and autumn evenings.' },
+    { img: 'uploads/ezgif-63297d4d2e8c1d4d-jpg/ezgif-frame-009.jpg', name: 'The Claret', jacket: '#5a1f26', trousers: '#3a3a3c', jName: 'Burgundy', tName: 'Charcoal', tie: 'Navy silk', price: 'K162,000', note: 'Rich wine jacket over charcoal. Made for the evening.' },
+    { img: 'uploads/ezgif-63297d4d2e8c1d4d-jpg/ezgif-frame-011.jpg', name: 'The Midnight', jacket: '#141414', trousers: '#141414', jName: 'Jet black', tName: 'Jet black', tie: 'Silver grey', price: 'K172,000', note: 'A full black suit for black-tie occasions and late nights.' },
+    { img: 'uploads/ezgif-62f9cc861d8a5eb0-jpg/ezgif-frame-004.jpg', name: 'The Admiral', jacket: '#1c2540', trousers: '#ece8de', jName: 'Navy, gold buttons', tName: 'Ivory white', tie: 'Burgundy silk', price: 'K158,000', note: 'Navy double-breasted with gold buttons over white trousers. Regattas and summer evenings.' },
+    { img: 'uploads/ezgif-62f9cc861d8a5eb0-jpg/ezgif-frame-005.jpg', name: 'The Dove', jacket: '#bdbdba', trousers: '#1b2030', jName: 'Dove grey', tName: 'Navy', tie: 'Pale pink silk', price: 'K145,000', note: 'Soft grey single-breasted with dark navy trousers. Light and easy for daytime.' },
+    { img: 'uploads/ezgif-62f9cc861d8a5eb0-jpg/ezgif-frame-007.jpg', name: 'The Camel', jacket: '#c49a6c', trousers: '#33251c', jName: 'Camel', tName: 'Chocolate', tie: 'Forest green', price: 'K152,000', note: 'Camel with patch pockets over chocolate brown. Warm and relaxed for autumn.' },
+    { img: 'uploads/ezgif-62f9cc861d8a5eb0-jpg/ezgif-frame-009.jpg', name: 'The Slate', jacket: '#5c5e60', trousers: '#b9b6b0', jName: 'Charcoal flannel', tName: 'Stone grey', tie: 'Mustard gold', price: 'K149,000', note: 'Charcoal flannel with a ticket pocket over pale stone trousers. A classic for the office.' },
+    { img: 'uploads/ezgif-62f9cc861d8a5eb0-jpg/ezgif-frame-011.jpg', name: 'The Olive', jacket: '#4f5a3a', trousers: '#c7b59a', jName: 'Olive', tName: 'Khaki', tie: 'Rust orange', price: 'K149,000', note: 'Olive wool over khaki, finished with a rust tie. Country and city alike.' },
+    { img: 'uploads/ezgif-8a1e4dd94816bc0b-jpg/ezgif-frame-004.jpg', name: 'The Tweed', jacket: '#5a3c28', trousers: '#d8cdb8', jName: 'Brown chalk-stripe tweed', tName: 'Sand beige', tie: 'Navy silk', price: 'K155,000', note: 'Brown striped tweed over sand trousers. Weekends in the country.' },
+    { img: 'uploads/ezgif-8a1e4dd94816bc0b-jpg/ezgif-frame-005.jpg', name: 'The Riviera', jacket: '#a9c6e2', trousers: '#ece9e0', jName: 'Powder blue', tName: 'Ivory white', tie: 'Navy silk', price: 'K145,000', note: 'Pale blue over white. Made for summer by the sea.' },
+    { img: 'uploads/ezgif-8a1e4dd94816bc0b-jpg/ezgif-frame-007.jpg', name: 'The Midnight Blue', jacket: '#141a2a', trousers: '#141a2a', jName: 'Midnight double-breasted', tName: 'Midnight', tie: 'Silver silk', price: 'K172,000', note: 'A full midnight blue double-breasted suit. Evening dress without the bow tie.' },
+    { img: 'uploads/ezgif-8a1e4dd94816bc0b-jpg/ezgif-frame-009.jpg', name: 'The Ivory Navy', jacket: '#ece6d6', trousers: '#161b2b', jName: 'Ivory', tName: 'Navy', tie: 'Burgundy silk', price: 'K152,000', note: 'Ivory over navy with a burgundy tie. Summer weddings and evening receptions.' },
+    { img: 'uploads/ezgif-8a1e4dd94816bc0b-jpg/ezgif-frame-011.jpg', name: 'The Banker', jacket: '#3a3b3e', trousers: '#3a3b3e', jName: 'Charcoal pinstripe', tName: 'Charcoal pinstripe', tie: 'Burgundy silk', price: 'K162,000', note: 'A full charcoal pinstripe suit. The boardroom classic.' }
+  ];
+  pick(i) { if (i !== this.state.i) this.setState({ i }); }
+  renderVals() {
+    const i = this.state.i, L = this.LOOKS[i];
+    return {
+            look: { ...L, n: String(i + 1).padStart(2, '0') },
+      op: { a: i === 0 ? 1 : 0, b: i === 1 ? 1 : 0, c: i === 2 ? 1 : 0, d: i === 3 ? 1 : 0, e: i === 4 ? 1 : 0, f: i === 5 ? 1 : 0, g: i === 6 ? 1 : 0, h: i === 7 ? 1 : 0, i: i === 8 ? 1 : 0, j: i === 9 ? 1 : 0, k: i === 10 ? 1 : 0, l: i === 11 ? 1 : 0, m: i === 12 ? 1 : 0, n: i === 13 ? 1 : 0, o: i === 14 ? 1 : 0 },
+      looks: this.LOOKS.map((l, k) => ({ img: l.img, opacity: k === i ? 1 : 0, loading: 'eager', name: l.name, jacket: l.jacket, trousers: l.trousers, on: k === i, ring: k === i ? '#c9a46a' : '#efe8dc33', pick: () => this.pick(k) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

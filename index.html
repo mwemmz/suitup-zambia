@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Halden &amp; Vane — Bespoke Tailoring on Sackville Street</title>
+<meta name="description" content="Bespoke suits cut by hand on Sackville Street since 1987. Three fittings, eight weeks, and no two from the same pattern.">
+<meta property="og:title" content="Halden &amp; Vane — Bespoke Tailoring">
+<meta property="og:description" content="Bespoke suits cut by hand on Sackville Street since 1987.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;background:#0b0a08;color:#efe8dc;font-family:'Geist',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#c9a46a;text-decoration:none}a:hover{color:#efe8dc}
+*{box-sizing:border-box}
+</style>
+</helmet>
+
+<header style="position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px 24px;padding:clamp(14px,2.4vw,24px) clamp(16px,4vw,56px);background:#0b0a08;transform:translateZ(0);border-bottom:1px solid #efe8dc14">
+  <a href="/" style="font-family:'Geist',sans-serif;font-size:22px;letter-spacing:.04em;color:#efe8dc">Halden <span style="color:#c9a46a">&amp;</span> Vane</a>
+  <nav style="display:flex;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;max-width:100%;white-space:nowrap;gap:clamp(14px,3vw,40px);font-size:clamp(10px,2.6vw,12px);letter-spacing:.18em;text-transform:uppercase">
+    <a href="/Craft" style="color:#efe8dc" style-hover="color:#c9a46a">Craft</a>
+    <a href="/Collections" style="color:#efe8dc" style-hover="color:#c9a46a">Collections</a>
+    <a href="/Builder" style="color:#efe8dc" style-hover="color:#c9a46a">Build a suit</a>
+    <a href="/Fitting" style="color:#c9a46a;border-bottom:1px solid #c9a46a66;padding-bottom:4px" style-hover="color:#efe8dc">Book a fitting</a>
+  </nav>
+</header>
+
+<section ref="{{ heroRef }}" data-screen-label="Home · Hero" style="position:relative;height:700vh">
+  <div ref="{{ stageRef }}" style="position:sticky;top:0;height:100vh;overflow:hidden;background:#0b0a08">
+    <canvas ref="{{ canvasRef }}" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+    <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,transparent 45%,#0b0a08e0 100%);pointer-events:none"></div>
+
+    <div data-cap="1" data-a="-1" data-b="0.12" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-40%);text-align:center;padding:0 20px">
+      <h1 style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(52px,9vw,140px);line-height:.98;margin:0">The Anatomy<br><span style="color:#c9a46a">of a Suit</span></h1>
+      <div style="margin-top:40px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.65">Scroll to dress</div>
+    </div>
+
+    <div data-cap="1" data-a="0.1" data-b="0.26" style="position:absolute;left:clamp(20px,6vw,96px);top:50%;transform:translateY(-50%);max-width:340px;opacity:0">
+      <div style="font-family:'Geist',sans-serif;font-size:15px;color:#c9a46a;margin-bottom:14px">I. The shirt</div>
+      <h2 style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(34px,4vw,60px);line-height:1.02;margin:0">A shirt of pure cotton.</h2>
+      <p style="font-weight:300;font-size:17px;line-height:1.6;opacity:.8;margin:18px 0 0">Two-fold Egyptian poplin, collar cut to the line of your jaw.</p>
+    </div>
+
+    <div data-cap="1" data-a="0.32" data-b="0.47" style="position:absolute;right:clamp(20px,6vw,96px);top:50%;transform:translateY(-50%);max-width:340px;opacity:0;text-align:right">
+      <div style="font-family:'Geist',sans-serif;font-size:15px;color:#c9a46a;margin-bottom:14px">II. The waistcoat</div>
+      <h2 style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(34px,4vw,60px);line-height:1.02;margin:0">Measured, then held close.</h2>
+      <p style="font-weight:300;font-size:17px;line-height:1.6;opacity:.8;margin:18px 0 0">Five buttons, a silk back, and a cinch that sits exactly at your natural waist.</p>
+    </div>
+
+    <div data-cap="1" data-a="0.5" data-b="0.66" style="position:absolute;left:clamp(20px,6vw,96px);top:50%;transform:translateY(-50%);max-width:340px;opacity:0">
+      <div style="font-family:'Geist',sans-serif;font-size:15px;color:#c9a46a;margin-bottom:14px">III. The jacket</div>
+      <h2 style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(34px,4vw,60px);line-height:1.02;margin:0">Built on full canvas.</h2>
+      <p style="font-weight:300;font-size:17px;line-height:1.6;opacity:.8;margin:18px 0 0">Horsehair, hand-padded lapels, a chest that moulds to you over years of wear.</p>
+    </div>
+
+    <div data-cap="1" data-a="0.7" data-b="0.84" style="position:absolute;right:clamp(20px,6vw,96px);top:50%;transform:translateY(-50%);max-width:340px;opacity:0;text-align:right">
+      <div style="font-family:'Geist',sans-serif;font-size:15px;color:#c9a46a;margin-bottom:14px">IV. The cloth</div>
+      <h2 style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(34px,4vw,60px);line-height:1.02;margin:0">Woven in Yorkshire.</h2>
+      <p style="font-weight:300;font-size:17px;line-height:1.6;opacity:.8;margin:18px 0 0">Super 130s worsted, pattern-matched across every seam and pocket flap.</p>
+    </div>
+
+    <div data-cap="1" data-a="0.85" data-b="1.2" style="position:absolute;left:clamp(20px,6vw,96px);bottom:12vh;max-width:380px;opacity:0">
+      <div style="font-family:'Geist',sans-serif;font-size:15px;color:#c9a46a;margin-bottom:14px">V. The detail</div>
+      <h2 style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(34px,4vw,60px);line-height:1.02;margin:0">Working cuffs, finished by hand.</h2>
+      <p style="font-weight:300;font-size:17px;line-height:1.6;opacity:.8;margin:18px 0 0">Four kissing horn buttons. Cufflinks of gold and onyx.</p>
+    </div>
+
+    <div style="position:absolute;left:0;right:0;bottom:0;height:2px;background:#efe8dc14">
+      <div ref="{{ barRef }}" style="height:100%;width:100%;transform-origin:left;transform:scaleX(0);background:#c9a46a"></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="Home · Manifesto" style="padding:clamp(96px,14vw,200px) clamp(20px,6vw,96px);border-top:1px solid #efe8dc14">
+  <p data-reveal="1" style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(30px,4.2vw,62px);line-height:1.18;margin:0;max-width:1100px;text-wrap:pretty">We have cut suits on Sackville Street since 1987. <span style="color:#efe8dc80">No two from the same pattern, none from a block. Each one begins with a conversation and ends, eight weeks later, on your shoulders.</span></p>
+</section>
+
+<section data-screen-label="Home · Collections" style="padding:0 clamp(20px,6vw,96px) clamp(96px,12vw,160px)">
+  <div style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:48px">
+    <h2 data-reveal="1" style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(40px,5vw,72px);line-height:1;margin:0">The house <span style="color:#c9a46a">commissions</span></h2>
+    <a href="/Collections" style="font-size:12px;letter-spacing:.24em;text-transform:uppercase">View all collections →</a>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px">
+    <a data-reveal="1" href="/Collections" style="grid-row:span 2;display:flex;flex-direction:column;gap:18px;color:#efe8dc">
+      <div style="flex:1;min-height:420px;background:#16140f;overflow:hidden"><img src="frames/d/180.jpg" alt="Three-piece suit" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 900ms cubic-bezier(0.23,1,0.32,1)" style-hover="transform:scale(1.03)"></img></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><div style="font-family:'Geist',sans-serif;font-size:28px">The Sackville three-piece</div><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c9a46a">From K158,000</div></div>
+    </a>
+    <a data-reveal="1" data-delay="80" href="/Collections" style="display:flex;flex-direction:column;gap:14px;color:#efe8dc">
+      <div style="aspect-ratio:16/10;background:#16140f;overflow:hidden"><img src="frames/d/150.jpg" alt="Jacket" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 900ms cubic-bezier(0.23,1,0.32,1)" style-hover="transform:scale(1.03)"></img></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><div style="font-family:'Geist',sans-serif;font-size:22px">The Vane two-button</div><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c9a46a">From K139,000</div></div>
+    </a>
+    <a data-reveal="1" data-delay="160" href="/Collections" style="display:flex;flex-direction:column;gap:14px;color:#efe8dc">
+      <div style="aspect-ratio:16/10;background:#16140f;overflow:hidden"><img src="frames/d/240.jpg" alt="Cufflinks" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform 900ms cubic-bezier(0.23,1,0.32,1)" style-hover="transform:scale(1.03)"></img></div>
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><div style="font-family:'Geist',sans-serif;font-size:22px">Cufflinks, to commission</div><div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#c9a46a">From K12,500</div></div>
+    </a>
+  </div>
+</section>
+
+<section data-screen-label="Home · Process" style="padding:clamp(80px,10vw,140px) clamp(20px,6vw,96px);background:#efe8dc;color:#17150f;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(40px,6vw,96px)">
+  <div data-reveal="1" style="display:flex;flex-direction:column;gap:24px;align-items:flex-start">
+    <h2 style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(40px,5vw,72px);line-height:1;margin:0">Eight weeks.<br><span style="color:#8a5a2b">Three fittings.</span></h2>
+    <a href="/Craft" style="font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:#8a5a2b" style-hover="color:#17150f">How a suit is made →</a>
+  </div>
+  <div style="display:flex;flex-direction:column">
+    <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+      <div data-reveal="1" style="display:grid;grid-template-columns:64px 1fr;gap:24px;padding:28px 0;border-top:1px solid #17150f1f">
+        <div style="font-family:'Geist',sans-serif;font-size:28px;color:#8a5a2b">{{ s.n }}</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="font-size:13px;letter-spacing:.22em;text-transform:uppercase">{{ s.title }}</div>
+          <p style="font-weight:300;font-size:16px;line-height:1.65;opacity:.7;margin:0">{{ s.body }}</p>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section data-screen-label="Home · Quote" style="padding:clamp(80px,10vw,140px) clamp(20px,6vw,96px);border-top:1px solid #efe8dc14;display:flex;flex-direction:column;gap:28px;align-items:center;text-align:center">
+  <blockquote data-reveal="1" style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(28px,3.4vw,48px);line-height:1.25;margin:0;max-width:900px;text-wrap:balance">“The first jacket I have owned that I forget I am wearing.”</blockquote>
+  <div style="font-size:12px;letter-spacing:.26em;text-transform:uppercase;opacity:.6">Client since 2009</div>
+</section>
+
+<section data-screen-label="Home · Book" style="padding:clamp(96px,14vw,200px) clamp(20px,6vw,96px);background:#efe8dc;color:#0b0a08;text-align:center;display:flex;flex-direction:column;align-items:center;gap:32px">
+  <h2 data-reveal="1" style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(44px,7vw,112px);line-height:.95;margin:0;max-width:1000px;text-wrap:balance">Your first fitting is <span style="font-style:italic">on us.</span></h2>
+  <p style="font-weight:300;font-size:18px;line-height:1.6;max-width:520px;margin:0;color:#3a342b">Ninety minutes with a cutter, a glass of something good, and no obligation.</p>
+  <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
+    <a href="/Fitting" style="background:#0b0a08;color:#efe8dc;padding:20px 40px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:transform 160ms ease-out,background 200ms ease-out" style-hover="background:#16140f;color:#efe8dc" style-active="transform:scale(0.97)">Reserve a fitting</a>
+    <a href="tel:+442079460187" style="border:1px solid #0b0a08;color:#0b0a08;padding:20px 40px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:transform 160ms ease-out" style-hover="background:#0b0a0810;color:#0b0a08" style-active="transform:scale(0.97)">+44 20 7946 0187</a>
+  </div>
+</section>
+
+<footer style="padding:48px clamp(20px,6vw,96px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:#efe8dc99;border-top:1px solid #efe8dc14">
+  <div style="font-family:'Geist',sans-serif;font-size:18px;color:#efe8dc">Halden &amp; Vane</div>
+  <div>14 Sackville Street, London W1</div>
+  <div>Mon–Sat · 10–7</div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  heroRef = React.createRef(); stageRef = React.createRef(); canvasRef = React.createRef(); barRef = React.createRef();
+  N = 241; imgs = []; cur = -1;
+  src(i) {
+    const m = window.innerWidth < 768 && i % 2 === 0;
+    return `frames/${m ? 'm' : 'd'}/${String(i).padStart(3, '0')}.jpg`;
+  }
+  componentDidMount() {
+    const load = i => { if (this.imgs[i]) return; const im = new Image(); im.onload = () => { if (Math.abs(i - this.target()) < 8) this.draw(true); }; im.src = this.src(i); this.imgs[i] = im; };
+    this.mobile = window.innerWidth < 768;
+    this.step = this.mobile ? 2 : 1;
+    load(0);
+    const rest = () => { const order = []; for (let s = 8; s >= this.step; s = s / 2 | 0) { for (let i = 0; i < this.N; i += s) order.push(i); if (s === this.step) break; } let k = 0; const step = () => { const end = Math.min(order.length, k + 16); for (; k < end; k++) load(order[k]); if (k < order.length) setTimeout(step, 50); }; step(); };
+    if (document.readyState === 'complete') setTimeout(rest, 150); else window.addEventListener('load', () => setTimeout(rest, 150), { once: true });
+    this.onScroll = () => this.kick();
+    this.onResize = () => { this.layout(); this.draw(true); };
+    this.layout();
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onResize);
+    this.draw(true);
+    this.reveal();
+  }
+  kick() {
+    if (this.raf) return;
+    const tick = () => {
+      const goal = this.frameAt(this.progress());
+      if (this.f == null) this.f = goal;
+      this.f += (goal - this.f) * 0.16;
+      if (Math.abs(goal - this.f) < 0.3) this.f = goal;
+      this.draw();
+      this.raf = this.f === goal ? 0 : requestAnimationFrame(tick);
+    };
+    this.raf = requestAnimationFrame(tick);
+  }
+  componentWillUnmount() { cancelAnimationFrame(this.raf); window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onResize); this.io && this.io.disconnect(); }
+  reveal() {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches || !window.IntersectionObserver) return;
+    const els = [...document.querySelectorAll('[data-reveal]')];
+    this.io = new IntersectionObserver(es => es.forEach(en => {
+      if (!en.isIntersecting) return; this.io.unobserve(en.target);
+      en.target.animate([{ opacity: 0, transform: 'translateY(24px)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: +(en.target.dataset.delay || 0), easing: 'cubic-bezier(0.23,1,0.32,1)', fill: 'backwards' });
+    }), { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(e => { const r = e.getBoundingClientRect(); if (r.top > innerHeight) this.io.observe(e); });
+  }
+  layout() {
+    const hd = document.querySelector('header'); this.headH = hd ? hd.offsetHeight : 0;
+    this.mobile = window.innerWidth < 768;
+    const st = this.stageRef.current; if (!st) return;
+    st.querySelectorAll('[data-cap]').forEach((el, k) => {
+      if (!el.dataset.orig) el.dataset.orig = el.getAttribute('style');
+      if (this.mobile && k > 0) {
+        el.setAttribute('style', el.dataset.orig);
+        Object.assign(el.style, { left: '20px', right: '20px', top: 'auto', bottom: '7vh', transform: 'none', textAlign: 'left', maxWidth: 'none', opacity: 0 });
+      } else el.setAttribute('style', el.dataset.orig);
+    });
+    if (!this.shade) { this.shade = document.createElement('div'); this.shade.style.cssText = 'position:absolute;left:0;right:0;bottom:0;height:45vh;background:linear-gradient(#0b0a0800,#0b0a08f0);pointer-events:none'; st.insertBefore(this.shade, st.querySelector('[data-cap]')); }
+    this.shade.style.display = this.mobile ? 'block' : 'none';
+  }
+  progress() {
+    const el = this.heroRef.current; if (!el) return 0;
+    const r = el.getBoundingClientRect();
+    return Math.min(1, Math.max(0, -r.top / (r.height - window.innerHeight)));
+  }
+  KEYS = [[0, 0], [0.36, 112], [0.42, 130], [0.54, 132], [0.6, 140], [1, 240]];
+  frameAt(p) {
+    const K = this.KEYS;
+    for (let k = 1; k < K.length; k++) if (p <= K[k][0]) { const [a, fa] = K[k - 1], [b, fb] = K[k]; return fa + (fb - fa) * ((p - a) / (b - a)); }
+    return K[K.length - 1][1];
+  }
+  target() { return Math.round(this.frameAt(this.progress())); }
+  nearest(i) { for (let d = 0; d < this.N; d++) for (const j of [i - d, i + d]) { const im = this.imgs[j]; if (im && im.complete && im.naturalWidth) return im; } return null; }
+  draw(force) {
+    const c = this.canvasRef.current; if (!c) return;
+    const p = this.progress(), st0 = this.step || 1, i = Math.min(this.N - 1, Math.round((this.f != null ? this.f : this.frameAt(p)) / st0) * st0);
+    const dpr = Math.min(this.mobile ? 1.5 : 1.25, window.devicePixelRatio || 1), w = c.clientWidth, h = c.clientHeight;
+    if (c.width !== Math.round(w * dpr) || c.height !== Math.round(h * dpr)) { c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); force = true; }
+    const fr = this.f != null ? this.f : this.frameAt(p);
+    const ia = Math.min(this.N - 1, Math.floor(fr / st0) * st0), ib = Math.min(this.N - 1, ia + st0);
+    const mix = ib > ia ? (fr - ia) / st0 : 0;
+    const blendKey = ia + mix;
+    if (blendKey !== this.curKey || force) {
+      this.curKey = blendKey;
+      const im = this.nearest(ia), imB = this.imgs[ib];
+      if (im) {
+        const ctx = c.getContext('2d');
+        const top = (this.headH || 0) * dpr;
+        const aw = c.width, ah = c.height - top;
+        const cover = Math.max(aw / im.naturalWidth, ah / im.naturalHeight), contain = Math.min(aw / im.naturalWidth, ah / im.naturalHeight);
+        const s = Math.min(cover, contain * 1.4);
+        const dw = im.naturalWidth * s, dh = im.naturalHeight * s;
+        ctx.fillStyle = '#0b0a08'; ctx.fillRect(0, 0, c.width, c.height);
+        ctx.drawImage(im, (aw - dw) / 2, top + (ah - dh) / 2, dw, dh);
+        if (mix > 0.02 && imB && imB.complete && imB.naturalWidth) { ctx.globalAlpha = mix; ctx.drawImage(imB, (aw - dw) / 2, top + (ah - dh) / 2, dw, dh); ctx.globalAlpha = 1; }
+        if (im !== this.imgs[ia]) this.curKey = -1;
+      }
+    }
+    const st = this.stageRef.current;
+    if (st) st.querySelectorAll('[data-cap]').forEach(el => {
+      const a = +el.dataset.a, b = +el.dataset.b, f = 0.035;
+      const o = Math.max(0, Math.min(1, (p - a) / f, (b - p) / f));
+      el.style.opacity = o; el.style.pointerEvents = o > .5 ? 'auto' : 'none';
+    });
+    if (this.barRef.current) this.barRef.current.style.transform = `scaleX(${p})`;
+  }
+  renderVals() {
+    return {
+      heroRef: this.heroRef, stageRef: this.stageRef, canvasRef: this.canvasRef, barRef: this.barRef,
+      steps: [
+        { n: '01', title: 'Consultation', body: 'Occasion, cloth and cut, and thirty-two measurements.' },
+        { n: '02', title: 'The pattern', body: 'Drafted by hand onto brown paper, unique to your posture.' },
+        { n: '03', title: 'Baste fitting', body: 'A tacked shell, chalked and recut on your body.' },
+        { n: '04', title: 'Finishing', body: 'Sixty hours of handwork: canvas, buttonholes, lining, press.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
