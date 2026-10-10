@@ -8,11 +8,12 @@
 <body>
 <x-dc>
 <helmet>
-<title>Craft — Sixty Hours by Hand | Halden &amp; Vane</title>
-<meta name="description" content="Sixty hours by hand: five stages and three fittings that turn a length of cloth into a suit that is only yours.">
-<meta property="og:title" content="Craft — Sixty Hours by Hand | Halden &amp; Vane">
-<meta property="og:description" content="Five stages and three fittings that turn a length of cloth into a suit that is only yours.">
-<meta property="og:type" content="website">
+<title>The Craft — Halden & Vane</title>
+<meta name="description" content="Eight weeks, three fittings, sixty hours of handwork.">
+<meta property="og:title" content="The Craft — Halden & Vane">
+<meta property="og:description" content="Eight weeks, three fittings, sixty hours of handwork.">
+<meta property="og:image" content="/frames/d/180.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -68,7 +69,7 @@ a{color:#c9a46a;text-decoration:none}a:hover{color:#efe8dc}
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  src(i) { return `frames/d/${String(i).padStart(3, '0')}.jpg`; }
+  src(i) { return `/frames/d/${String(i).padStart(3, '0')}.jpg`; }
   componentDidMount() {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches || !window.IntersectionObserver) return;
     this.io = new IntersectionObserver(es => es.forEach(en => {

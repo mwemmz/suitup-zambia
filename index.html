@@ -8,11 +8,12 @@
 <body>
 <x-dc>
 <helmet>
-<title>Halden &amp; Vane — Bespoke Tailoring on Sackville Street</title>
-<meta name="description" content="Bespoke suits cut by hand on Sackville Street since 1987. Three fittings, eight weeks, and no two from the same pattern.">
-<meta property="og:title" content="Halden &amp; Vane — Bespoke Tailoring">
-<meta property="og:description" content="Bespoke suits cut by hand on Sackville Street since 1987.">
-<meta property="og:type" content="website">
+<title>Halden & Vane — Bespoke Tailoring</title>
+<meta name="description" content="Bespoke suits cut by hand. Book your first fitting free.">
+<meta property="og:title" content="Halden & Vane — Bespoke Tailoring">
+<meta property="og:description" content="Bespoke suits cut by hand. Book your first fitting free.">
+<meta property="og:image" content="/frames/d/180.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -147,7 +148,7 @@ class Component extends DCLogic {
   N = 241; imgs = []; cur = -1;
   src(i) {
     const m = window.innerWidth < 768 && i % 2 === 0;
-    return `frames/${m ? 'm' : 'd'}/${String(i).padStart(3, '0')}.jpg`;
+    return `/frames/${m ? 'm' : 'd'}/${String(i).padStart(3, '0')}.jpg`;
   }
   componentDidMount() {
     const load = i => { if (this.imgs[i]) return; const im = new Image(); im.onload = () => { if (Math.abs(i - this.target()) < 8) this.draw(true); }; im.src = this.src(i); this.imgs[i] = im; };
@@ -190,15 +191,26 @@ class Component extends DCLogic {
     const hd = document.querySelector('header'); this.headH = hd ? hd.offsetHeight : 0;
     this.mobile = window.innerWidth < 768;
     const st = this.stageRef.current; if (!st) return;
+    const MW = [[-1, 0.08], [0.08, 0.3], [0.3, 0.48], [0.48, 0.66], [0.66, 0.84], [0.84, 1.2]];
     st.querySelectorAll('[data-cap]').forEach((el, k) => {
-      if (!el.dataset.orig) el.dataset.orig = el.getAttribute('style');
+      if (!el.dataset.orig) { el.dataset.orig = el.getAttribute('style'); el.dataset.oa = el.dataset.a; el.dataset.ob = el.dataset.b; }
+      const w = this.mobile && MW[k] ? MW[k] : [el.dataset.oa, el.dataset.ob];
+      el.dataset.a = w[0]; el.dataset.b = w[1];
       if (this.mobile && k > 0) {
+        el.querySelectorAll('h2,p').forEach(n => n.removeAttribute('data-m'));
         el.setAttribute('style', el.dataset.orig);
-        Object.assign(el.style, { left: '20px', right: '20px', top: 'auto', bottom: '7vh', transform: 'none', textAlign: 'left', maxWidth: 'none', opacity: 0 });
+        const L = k % 2 === 1;
+        Object.assign(el.style, { left: L ? '16px' : 'auto', right: L ? 'auto' : '16px', top: '50%', bottom: 'auto', transform: 'translateY(-30%)', textAlign: L ? 'left' : 'right', maxWidth: '46vw', opacity: 0 });
+        const h2 = el.querySelector('h2'), pp = el.querySelector('p'); if (h2) h2.style.fontSize = 'clamp(22px,6.4vw,30px)'; if (pp) { pp.style.fontSize = '13.5px'; pp.style.lineHeight = '1.5'; pp.style.marginTop = '10px'; }
       } else el.setAttribute('style', el.dataset.orig);
     });
-    if (!this.shade) { this.shade = document.createElement('div'); this.shade.style.cssText = 'position:absolute;left:0;right:0;bottom:0;height:45vh;background:linear-gradient(#0b0a0800,#0b0a08f0);pointer-events:none'; st.insertBefore(this.shade, st.querySelector('[data-cap]')); }
+    if (!this.shade) { this.shade = document.createElement('div'); this.shade.style.cssText = 'position:absolute;inset:0;pointer-events:none'; st.insertBefore(this.shade, st.querySelector('[data-cap]')); }
     this.shade.style.display = this.mobile ? 'block' : 'none';
+  }
+  sideAt(p) {
+    const B = [0.3, 0.48, 0.66, 0.84]; let s = 1;
+    for (const b of B) { const k = Math.max(0, Math.min(1, (p - (b - 0.015)) / 0.03)); const e = k * k * (3 - 2 * k); s = s * (1 - e) + (-s) * e; if (p < b - 0.015) break; }
+    return s;
   }
   progress() {
     const el = this.heroRef.current; if (!el) return 0;
@@ -230,20 +242,24 @@ class Component extends DCLogic {
         const top = (this.headH || 0) * dpr;
         const aw = c.width, ah = c.height - top;
         const cover = Math.max(aw / im.naturalWidth, ah / im.naturalHeight), contain = Math.min(aw / im.naturalWidth, ah / im.naturalHeight);
-        const s = Math.min(cover, contain * 1.4);
+        const s = Math.min(cover, contain * (this.mobile ? 1.6 : 1.4));
         const dw = im.naturalWidth * s, dh = im.naturalHeight * s;
+        const y0 = top + (ah - dh) * 0.5;
         ctx.fillStyle = '#0b0a08'; ctx.fillRect(0, 0, c.width, c.height);
-        ctx.drawImage(im, (aw - dw) / 2, top + (ah - dh) / 2, dw, dh);
-        if (mix > 0.02 && imB && imB.complete && imB.naturalWidth) { ctx.globalAlpha = mix; ctx.drawImage(imB, (aw - dw) / 2, top + (ah - dh) / 2, dw, dh); ctx.globalAlpha = 1; }
+        const x0 = (aw - dw) / 2 + (this.mobile ? aw * 0.22 * this.sideAt(p) : 0);
+        ctx.drawImage(im, x0, y0, dw, dh);
+        const cut = ia >= 128 && ia <= 134;
+        if (cut && mix > 0.02 && imB && imB.complete && imB.naturalWidth) { ctx.globalAlpha = mix; ctx.drawImage(imB, x0, y0, dw, dh); ctx.globalAlpha = 1; }
         if (im !== this.imgs[ia]) this.curKey = -1;
       }
     }
     const st = this.stageRef.current;
     if (st) st.querySelectorAll('[data-cap]').forEach(el => {
-      const a = +el.dataset.a, b = +el.dataset.b, f = 0.035;
+      const a = +el.dataset.a, b = +el.dataset.b, f = this.mobile ? 0.015 : 0.035;
       const o = Math.max(0, Math.min(1, (p - a) / f, (b - p) / f));
       el.style.opacity = o; el.style.pointerEvents = o > .5 ? 'auto' : 'none';
     });
+    if (this.shade && this.mobile) { const sd = this.sideAt(p); const pct = Math.round((1 - sd) * 50); this.shade.style.background = `linear-gradient(90deg, #0b0a08${sd > 0 ? 'f0' : '00'} 0%, #0b0a0899 ${Math.max(10, Math.min(90, 50 - sd * 0))}%, #0b0a08${sd > 0 ? '00' : 'f0'} 100%)`; this.shade.style.opacity = Math.abs(sd); }
     if (this.barRef.current) this.barRef.current.style.transform = `scaleX(${p})`;
   }
   renderVals() {

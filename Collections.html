@@ -8,11 +8,12 @@
 <body>
 <x-dc>
 <helmet>
-<title>Collections — House Commissions | Halden &amp; Vane</title>
-<meta name="description" content="House commissions in Super 130s worsted and full canvas, from the Sackville three-piece to bespoke shirts and cloth by the metre.">
-<meta property="og:title" content="Collections — House Commissions | Halden &amp; Vane">
-<meta property="og:description" content="From the Sackville three-piece to bespoke shirts and cloth by the metre.">
-<meta property="og:type" content="website">
+<title>Collections — Halden & Vane</title>
+<meta name="description" content="Suits, tailoring and accessories, made to commission.">
+<meta property="og:title" content="Collections — Halden & Vane">
+<meta property="og:description" content="Suits, tailoring and accessories, made to commission.">
+<meta property="og:image" content="/frames/d/180.jpg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -69,7 +70,7 @@ a{color:#c9a46a;text-decoration:none}a:hover{color:#efe8dc}
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { tab: 'All' };
-  src(i) { return `frames/d/${String(i).padStart(3, '0')}.jpg`; }
+  src(i) { return `/frames/d/${String(i).padStart(3, '0')}.jpg`; }
   renderVals() {
     const all = [
       { cat: 'Suits', name: 'The Sackville', price: 'From K158,000', note: 'Our house three-piece in charcoal Prince of Wales check. Soft shoulder, high armhole, a waistcoat cut close.', spec: 'Super 130s · Full canvas · 8 weeks', img: this.src(180), pos: 'center 30%', ratio: '16/10', span: 2 },
