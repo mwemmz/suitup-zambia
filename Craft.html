@@ -69,7 +69,7 @@ a{color:#c9a46a;text-decoration:none}a:hover{color:#efe8dc}
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  src(i) { return `/frames/d/${String(i).padStart(3, '0')}.jpg`; }
+  src(i) { return `frames/d/${String(i).padStart(3, '0')}.jpg`; }
   componentDidMount() {
     if (matchMedia('(prefers-reduced-motion: reduce)').matches || !window.IntersectionObserver) return;
     this.io = new IntersectionObserver(es => es.forEach(en => {

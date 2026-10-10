@@ -70,7 +70,7 @@ a{color:#c9a46a;text-decoration:none}a:hover{color:#efe8dc}
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { tab: 'All' };
-  src(i) { return `/frames/d/${String(i).padStart(3, '0')}.jpg`; }
+  src(i) { return `frames/d/${String(i).padStart(3, '0')}.jpg`; }
   renderVals() {
     const all = [
       { cat: 'Suits', name: 'The Sackville', price: 'From K158,000', note: 'Our house three-piece in charcoal Prince of Wales check. Soft shoulder, high armhole, a waistcoat cut close.', spec: 'Super 130s · Full canvas · 8 weeks', img: this.src(180), pos: 'center 30%', ratio: '16/10', span: 2 },

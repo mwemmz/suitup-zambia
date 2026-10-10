@@ -148,7 +148,7 @@ class Component extends DCLogic {
   N = 241; imgs = []; cur = -1;
   src(i) {
     const m = window.innerWidth < 768 && i % 2 === 0;
-    return `/frames/${m ? 'm' : 'd'}/${String(i).padStart(3, '0')}.jpg`;
+    return `frames/${m ? 'm' : 'd'}/${String(i).padStart(3, '0')}.jpg`;
   }
   componentDidMount() {
     const load = i => { if (this.imgs[i]) return; const im = new Image(); im.onload = () => { if (Math.abs(i - this.target()) < 8) this.draw(true); }; im.src = this.src(i); this.imgs[i] = im; };
@@ -200,7 +200,7 @@ class Component extends DCLogic {
         el.querySelectorAll('h2,p').forEach(n => n.removeAttribute('data-m'));
         el.setAttribute('style', el.dataset.orig);
         const L = k % 2 === 1;
-        Object.assign(el.style, { left: L ? '16px' : 'auto', right: L ? 'auto' : '16px', top: '50%', bottom: 'auto', transform: 'translateY(-30%)', textAlign: L ? 'left' : 'right', maxWidth: '46vw', opacity: 0 });
+        Object.assign(el.style, { left: L ? '16px' : 'auto', right: L ? 'auto' : '16px', top: '50%', bottom: 'auto', transform: 'translateY(-30%)', textAlign: L ? 'left' : 'right', maxWidth: '42vw', opacity: 0, textShadow: '0 2px 18px #000, 0 1px 3px #000' });
         const h2 = el.querySelector('h2'), pp = el.querySelector('p'); if (h2) h2.style.fontSize = 'clamp(22px,6.4vw,30px)'; if (pp) { pp.style.fontSize = '13.5px'; pp.style.lineHeight = '1.5'; pp.style.marginTop = '10px'; }
       } else el.setAttribute('style', el.dataset.orig);
     });
@@ -242,11 +242,11 @@ class Component extends DCLogic {
         const top = (this.headH || 0) * dpr;
         const aw = c.width, ah = c.height - top;
         const cover = Math.max(aw / im.naturalWidth, ah / im.naturalHeight), contain = Math.min(aw / im.naturalWidth, ah / im.naturalHeight);
-        const s = Math.min(cover, contain * (this.mobile ? 1.6 : 1.4));
+        const s = this.mobile ? cover : Math.min(cover, contain * 1.4);
         const dw = im.naturalWidth * s, dh = im.naturalHeight * s;
         const y0 = top + (ah - dh) * 0.5;
         ctx.fillStyle = '#0b0a08'; ctx.fillRect(0, 0, c.width, c.height);
-        const x0 = (aw - dw) / 2 + (this.mobile ? aw * 0.22 * this.sideAt(p) : 0);
+        const x0 = (aw - dw) / 2;
         ctx.drawImage(im, x0, y0, dw, dh);
         const cut = ia >= 128 && ia <= 134;
         if (cut && mix > 0.02 && imB && imB.complete && imB.naturalWidth) { ctx.globalAlpha = mix; ctx.drawImage(imB, x0, y0, dw, dh); ctx.globalAlpha = 1; }
@@ -259,7 +259,7 @@ class Component extends DCLogic {
       const o = Math.max(0, Math.min(1, (p - a) / f, (b - p) / f));
       el.style.opacity = o; el.style.pointerEvents = o > .5 ? 'auto' : 'none';
     });
-    if (this.shade && this.mobile) { const sd = this.sideAt(p); const pct = Math.round((1 - sd) * 50); this.shade.style.background = `linear-gradient(90deg, #0b0a08${sd > 0 ? 'f0' : '00'} 0%, #0b0a0899 ${Math.max(10, Math.min(90, 50 - sd * 0))}%, #0b0a08${sd > 0 ? '00' : 'f0'} 100%)`; this.shade.style.opacity = Math.abs(sd); }
+    if (this.shade) { if (this.mobile) { const sd = this.sideAt(p); const dir = sd >= 0 ? '90deg' : '270deg'; this.shade.style.background = `linear-gradient(${dir}, #0b0a08e6 0%, #0b0a08b3 32vw, #0b0a0800 58vw)`; this.shade.style.opacity = Math.min(1, Math.abs(sd) * 1.2) * (p > 0.08 ? 1 : 0); } }
     if (this.barRef.current) this.barRef.current.style.transform = `scaleX(${p})`;
   }
   renderVals() {
