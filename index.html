@@ -80,7 +80,7 @@ a{color:#c9a46a;text-decoration:none}a:hover{color:#efe8dc}
 </section>
 
 <section data-screen-label="Home · Manifesto" style="padding:clamp(96px,14vw,200px) clamp(20px,6vw,96px);border-top:1px solid #efe8dc14">
-  <p data-reveal="1" style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(30px,4.2vw,62px);line-height:1.18;margin:0;max-width:1100px;text-wrap:pretty">We have cut suits on Sackville Street since 1987. <span style="color:#efe8dc80">No two from the same pattern, none from a block. Each one begins with a conversation and ends, eight weeks later, on your shoulders.</span></p>
+  <p data-reveal="1" style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(30px,4.2vw,62px);line-height:1.18;margin:0;max-width:1100px;text-wrap:pretty">We have cut suits in Lusaka since 1987. <span style="color:#efe8dc80">No two from the same pattern, none from a block. Each one begins with a conversation and ends, eight weeks later, on your shoulders.</span></p>
 </section>
 
 <section data-screen-label="Home · Collections" style="padding:0 clamp(20px,6vw,96px) clamp(96px,12vw,160px)">
@@ -132,13 +132,13 @@ a{color:#c9a46a;text-decoration:none}a:hover{color:#efe8dc}
   <p style="font-weight:300;font-size:18px;line-height:1.6;max-width:520px;margin:0;color:#3a342b">Ninety minutes with a cutter, a glass of something good, and no obligation.</p>
   <div style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center">
     <a href="/Fitting" style="background:#0b0a08;color:#efe8dc;padding:20px 40px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:transform 160ms ease-out,background 200ms ease-out" style-hover="background:#16140f;color:#efe8dc" style-active="transform:scale(0.97)">Reserve a fitting</a>
-    <a href="tel:+442079460187" style="border:1px solid #0b0a08;color:#0b0a08;padding:20px 40px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:transform 160ms ease-out" style-hover="background:#0b0a0810;color:#0b0a08" style-active="transform:scale(0.97)">+44 20 7946 0187</a>
+    <a href="tel:+260977418230" style="border:1px solid #0b0a08;color:#0b0a08;padding:20px 40px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;transition:transform 160ms ease-out" style-hover="background:#0b0a0810;color:#0b0a08" style-active="transform:scale(0.97)">+260 97 741 8230</a>
   </div>
 </section>
 
 <footer style="padding:48px clamp(20px,6vw,96px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:#efe8dc99;border-top:1px solid #efe8dc14">
   <div style="font-family:'Geist',sans-serif;font-size:18px;color:#efe8dc">Halden &amp; Vane</div>
-  <div>14 Sackville Street, London W1</div>
+  <div>Plot 1124, Parirenyatwa Road, Lusaka</div>
   <div>Mon–Sat · 10–7</div>
 </footer>
 </x-dc>
@@ -147,12 +147,12 @@ class Component extends DCLogic {
   heroRef = React.createRef(); stageRef = React.createRef(); canvasRef = React.createRef(); barRef = React.createRef();
   N = 241; imgs = []; cur = -1;
   src(i) {
-    return `frames/d/${String(i).padStart(3, '0')}.jpg`;
+    return this.mobile ? `frames/m/${String((i >> 1) + 1).padStart(3, '0')}.jpg` : `frames/d/${String(i).padStart(3, '0')}.jpg`;
   }
   componentDidMount() {
-    const load = i => { if (this.imgs[i]) return; const im = new Image(); im.onload = () => { if (Math.abs(i - this.target()) < 8) this.draw(true); }; im.src = this.src(i); this.imgs[i] = im; };
+    const load = i => { if (this.imgs[i]) return; const im = new Image(); im.onload = () => { if (Math.abs(i - this.target()) < 8) this.draw(true); }; im.src = this.src(i); if (im.decode) im.decode().catch(() => {}); this.imgs[i] = im; };
     this.mobile = window.innerWidth < 768;
-    this.step = 1;
+    this.step = this.mobile ? 2 : 1;
     load(0);
     const rest = () => { const order = []; for (let s = 8; s >= this.step; s = s / 2 | 0) { for (let i = 0; i < this.N; i += s) order.push(i); if (s === this.step) break; } let k = 0; const step = () => { const end = Math.min(order.length, k + 16); for (; k < end; k++) load(order[k]); if (k < order.length) setTimeout(step, 50); }; step(); };
     if (document.readyState === 'complete') setTimeout(rest, 150); else window.addEventListener('load', () => setTimeout(rest, 150), { once: true });
@@ -199,8 +199,8 @@ class Component extends DCLogic {
         el.querySelectorAll('h2,p').forEach(n => n.removeAttribute('data-m'));
         el.setAttribute('style', el.dataset.orig);
         const L = k % 2 === 1;
-        Object.assign(el.style, { left: '20px', right: '20px', top: 'auto', bottom: 'calc(5vh + env(safe-area-inset-bottom))', transform: 'none', textAlign: L ? 'left' : 'right', maxWidth: 'none', opacity: 0, textShadow: '0 2px 14px #000' });
-        const h2 = el.querySelector('h2'), pp = el.querySelector('p'); if (h2) h2.style.fontSize = 'clamp(22px,6.4vw,30px)'; if (pp) { pp.style.fontSize = '13.5px'; pp.style.lineHeight = '1.5'; pp.style.marginTop = '10px'; }
+        Object.assign(el.style, { left: L ? '18px' : 'auto', right: L ? 'auto' : '18px', top: '54%', bottom: 'auto', transform: 'translateY(-50%)', textAlign: L ? 'left' : 'right', maxWidth: '40%', opacity: 0, textShadow: '0 2px 14px #000' });
+        const h2 = el.querySelector('h2'), pp = el.querySelector('p'); if (h2) h2.style.fontSize = 'clamp(20px,5.6vw,26px)'; if (pp) { pp.style.fontSize = '13px'; pp.style.lineHeight = '1.45'; pp.style.marginTop = '10px'; }
       } else el.setAttribute('style', el.dataset.orig);
     });
     if (!this.shade) { this.shade = document.createElement('div'); this.shade.style.cssText = 'position:absolute;inset:0;pointer-events:none'; st.insertBefore(this.shade, st.querySelector('[data-cap]')); }
@@ -232,7 +232,7 @@ class Component extends DCLogic {
     const fr = this.f != null ? this.f : this.frameAt(p);
     const ia = Math.min(this.N - 1, Math.floor(fr / st0) * st0), ib = Math.min(this.N - 1, ia + st0);
     const mix = ib > ia ? (fr - ia) / st0 : 0;
-    const blendKey = ia + mix;
+    const sd = this.mobile ? this.sideAt(p) : 0, cap = Math.max(0, Math.min(1, (p - 0.06) / 0.03, (0.86 - p) / 0.03)), shift = Math.round(sd * cap * c.width * 0.19); const blendKey = ia + mix + shift * 1000;
     if (blendKey !== this.curKey || force) {
       this.curKey = blendKey;
       const im = this.nearest(ia), imB = this.imgs[ib];
@@ -245,7 +245,7 @@ class Component extends DCLogic {
         const dw = im.naturalWidth * s, dh = im.naturalHeight * s;
         const y0 = top + (ah - dh) * 0.5;
         ctx.fillStyle = '#0b0a08'; ctx.fillRect(0, 0, c.width, c.height);
-        const x0 = (aw - dw) / 2;
+        const x0 = (aw - dw) / 2 + shift;
         ctx.drawImage(im, x0, y0, dw, dh);
         const cut = ia >= 128 && ia <= 134;
         if (cut && mix > 0.02 && imB && imB.complete && imB.naturalWidth) { ctx.globalAlpha = mix; ctx.drawImage(imB, x0, y0, dw, dh); ctx.globalAlpha = 1; }
@@ -258,7 +258,7 @@ class Component extends DCLogic {
       const o = Math.max(0, Math.min(1, (p - a) / f, (b - p) / f));
       el.style.opacity = o; el.style.pointerEvents = o > .5 ? 'auto' : 'none';
     });
-    if (this.shade) { if (this.mobile) { const sd = this.sideAt(p); const dir = sd >= 0 ? '90deg' : '270deg'; this.shade.style.background = 'linear-gradient(180deg, #0b0a0800 45%, #0b0a08cc 72%, #0b0a08f5 100%)'; this.shade.style.opacity = p > 0.06 ? 1 : 0; } }
+    if (this.shade) { if (this.mobile) { const sd = this.sideAt(p); const dir = sd >= 0 ? '90deg' : '270deg'; this.shade.style.background = `linear-gradient(${dir}, #0b0a08f0 0%, #0b0a08b0 38%, #0b0a0800 62%)`; this.shade.style.opacity = p > 0.06 ? 1 : 0; } }
     if (this.barRef.current) this.barRef.current.style.transform = `scaleX(${p})`;
   }
   renderVals() {

@@ -40,8 +40,8 @@ input::placeholder,textarea::placeholder{color:#efe8dc59}
     <h1 style="font-family:'Geist',sans-serif;font-weight:500;letter-spacing:-0.035em;font-size:clamp(48px,7vw,104px);line-height:.94;margin:0">Your first fitting<br><span style="color:#c9a46a">is on us.</span></h1>
     <p style="font-weight:300;font-size:18px;line-height:1.7;color:#efe8dcbf;margin:0;max-width:440px">Ninety minutes with a cutter. We'll look at cloth, talk through what you need, and take your measurements. No obligation.</p>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;padding-top:32px;border-top:1px solid #efe8dc1f;font-size:15px;line-height:1.7;color:#efe8dcbf">
-      <div><div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#efe8dc80;margin-bottom:8px">Atelier</div>14 Sackville Street<br>London W1S 3DH</div>
-      <div><div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#efe8dc80;margin-bottom:8px">Hours</div>Mon–Sat, 10–7<br><a href="tel:+442079460187">+44 20 7946 0187</a></div>
+      <div><div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#efe8dc80;margin-bottom:8px">Atelier</div>Plot 1124, Parirenyatwa Road<br>Fairview, Lusaka</div>
+      <div><div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#efe8dc80;margin-bottom:8px">Hours</div>Mon–Sat, 10–7<br><a href="tel:+260977418230">+260 97 741 8230</a></div>
     </div>
   </div>
 
@@ -58,7 +58,7 @@ input::placeholder,textarea::placeholder{color:#efe8dc59}
       <form onSubmit="{{ submit }}" style="display:flex;flex-direction:column;gap:28px">
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px">
           <label style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#efe8dc99">Name</span><input required value="{{ f.name }}" onInput="{{ on.name }}" placeholder="James Halden" style="background:transparent;border:none;border-bottom:1px solid #efe8dc33;padding:10px 0;color:#efe8dc;font-size:17px;outline:none" style-focus="border-bottom-color:#c9a46a"></input></label>
-          <label style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#efe8dc99">Phone</span><input required type="tel" value="{{ f.phone }}" onInput="{{ on.phone }}" placeholder="+44" style="background:transparent;border:none;border-bottom:1px solid #efe8dc33;padding:10px 0;color:#efe8dc;font-size:17px;outline:none" style-focus="border-bottom-color:#c9a46a"></input></label>
+          <label style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#efe8dc99">Phone</span><input required type="tel" value="{{ f.phone }}" onInput="{{ on.phone }}" placeholder="+260 97 000 0000" style="background:transparent;border:none;border-bottom:1px solid #efe8dc33;padding:10px 0;color:#efe8dc;font-size:17px;outline:none" style-focus="border-bottom-color:#c9a46a"></input></label>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px">
           <label style="display:flex;flex-direction:column;gap:10px"><span style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#efe8dc99">Email</span><input required type="email" value="{{ f.email }}" onInput="{{ on.email }}" placeholder="you@example.com" style="background:transparent;border:none;border-bottom:1px solid #efe8dc33;padding:10px 0;color:#efe8dc;font-size:17px;outline:none" style-focus="border-bottom-color:#c9a46a"></input></label>
@@ -81,7 +81,7 @@ input::placeholder,textarea::placeholder{color:#efe8dc59}
 
 <footer style="padding:48px clamp(20px,6vw,96px);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;font-size:13px;color:#efe8dc99;border-top:1px solid #efe8dc14">
   <div style="font-family:'Geist',sans-serif;font-size:18px;color:#efe8dc">Halden &amp; Vane</div>
-  <div>14 Sackville Street, London W1</div>
+  <div>Plot 1124, Parirenyatwa Road, Lusaka</div>
   <div>Mon–Sat · 10–7</div>
 </footer>
 </x-dc>
